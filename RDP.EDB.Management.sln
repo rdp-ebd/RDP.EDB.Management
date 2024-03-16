@@ -3,9 +3,49 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7C4C29B4-152D-45A0-9FE8-FBF2229C89C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1025331F-44F9-4212-B016-F67573438EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.Domain", "src\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj", "{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.Application", "src\RDP.EDB.Management.Application\RDP.EDB.Management.Application.csproj", "{70566CDF-D500-422D-9852-BBCD62695C58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.WebApi", "src\RDP.EDB.Management.WebApi\RDP.EDB.Management.WebApi.csproj", "{39EB1D36-9194-4124-BB76-276A939EE4DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.Infra", "src\RDP.EDB.Management.Infra\RDP.EDB.Management.Infra.csproj", "{EE0D5519-EF85-472D-8F69-42A3834FE14D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70566CDF-D500-422D-9852-BBCD62695C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70566CDF-D500-422D-9852-BBCD62695C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70566CDF-D500-422D-9852-BBCD62695C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70566CDF-D500-422D-9852-BBCD62695C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EB1D36-9194-4124-BB76-276A939EE4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EB1D36-9194-4124-BB76-276A939EE4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EB1D36-9194-4124-BB76-276A939EE4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EB1D36-9194-4124-BB76-276A939EE4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE} = {7C4C29B4-152D-45A0-9FE8-FBF2229C89C8}
+		{70566CDF-D500-422D-9852-BBCD62695C58} = {7C4C29B4-152D-45A0-9FE8-FBF2229C89C8}
+		{39EB1D36-9194-4124-BB76-276A939EE4DD} = {7C4C29B4-152D-45A0-9FE8-FBF2229C89C8}
+		{EE0D5519-EF85-472D-8F69-42A3834FE14D} = {7C4C29B4-152D-45A0-9FE8-FBF2229C89C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {24084466-675F-4CAE-895B-C79073FB25C9}
