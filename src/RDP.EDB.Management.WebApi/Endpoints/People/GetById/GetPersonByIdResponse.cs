@@ -1,3 +1,3 @@
 ﻿namespace RDP.EDB.Management.WebApi.Endpoints.People.GetById;
 
-public record GetPeopleByIdResponse(string Name, string Surname);
+public record GetPersonByIdResponse(string Name, string Surname);

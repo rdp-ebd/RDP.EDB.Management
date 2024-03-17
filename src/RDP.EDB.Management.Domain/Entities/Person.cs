@@ -6,6 +6,8 @@ public class Person
     public string? MiddleName { get; private set; }
     public string Surname { get; private set; }
 
+    private Person() { } // necessário para EF
+
     public Person(string firstName, string surname, string? middleName = null)
     {
         FirstName = firstName;
