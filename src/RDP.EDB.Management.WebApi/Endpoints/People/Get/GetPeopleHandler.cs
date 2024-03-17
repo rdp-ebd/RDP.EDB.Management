@@ -14,6 +14,7 @@ public class GetPeopleHandler
     {
         var response = await sender.Send(new GetPeopleQuery());
 
+        // TODO: refatorar para mapper
         return TypedResults.Ok(response.Select(x => 
             new GetPeopleResponse(x.FirstName, x.Surname)
         ));
