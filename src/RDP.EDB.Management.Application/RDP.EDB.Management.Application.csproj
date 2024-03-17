@@ -11,4 +11,8 @@
     <Folder Include="UseCases\Queries\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

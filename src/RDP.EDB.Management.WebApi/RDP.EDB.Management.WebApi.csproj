@@ -12,4 +12,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RDP.EDB.Management.Application\RDP.EDB.Management.Application.csproj" />
+    <ProjectReference Include="..\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj" />
+    <ProjectReference Include="..\RDP.EDB.Management.Infra\RDP.EDB.Management.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

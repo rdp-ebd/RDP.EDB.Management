@@ -10,4 +10,9 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RDP.EDB.Management.Application\RDP.EDB.Management.Application.csproj" />
+    <ProjectReference Include="..\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
