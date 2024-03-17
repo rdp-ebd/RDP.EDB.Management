@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Commands\" />
-    <Folder Include="UseCases\Queries\" />
+    <ProjectReference Include="..\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj" />
+    <Folder Include="UseCases\People\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
 </Project>
