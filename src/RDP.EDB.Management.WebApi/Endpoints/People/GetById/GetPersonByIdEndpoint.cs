@@ -6,9 +6,9 @@ using RDP.EDB.Management.Application.UseCases.People.Queries.GetById;
 
 namespace RDP.EDB.Management.WebApi.Endpoints.People.GetById;
 
-public class GetByIdEndpoint
+public class GetPersonByIdEndpoint
 {
-    public static async Task<Results<Ok<GetByIdResponse>, NotFound>> HandleAsync(
+    public static async Task<Results<Ok<GetPersonByIdResponse>, NotFound>> HandleAsync(
         int id,
         [FromServices] ISender sender,
         [FromServices] IMapper mapper,
@@ -19,6 +19,6 @@ public class GetByIdEndpoint
         if (result?.Data is null)
             return TypedResults.NotFound();
 
-        return TypedResults.Ok(mapper.Map<GetByIdResponse>(result?.Data));
+        return TypedResults.Ok(mapper.Map<GetPersonByIdResponse>(result?.Data));
     }
 }

@@ -11,11 +11,11 @@ public class PeopleEndpoint : ICarterModule
         var group = app.MapGroup("/api/people");
         const string tag = "people";
 
-        group.MapGet("", GetEndpoint.HandleAsync)
+        group.MapGet("", GetPeopleEndpoint.HandleAsync)
             .WithTags(tag)
             .WithOpenApi();
 
-        group.MapGet("{id}", GetByIdEndpoint.HandleAsync)
+        group.MapGet("{id}", GetPersonByIdEndpoint.HandleAsync)
             .WithTags(tag)
             .WithOpenApi();
     }        

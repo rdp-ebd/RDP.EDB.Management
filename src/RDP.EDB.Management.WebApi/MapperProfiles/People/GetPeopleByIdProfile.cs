@@ -8,8 +8,8 @@ public class GetPeopleByIdProfile : Profile
 {
     public GetPeopleByIdProfile()
     {
-        CreateMap<Person, GetByIdResponse>()
-            .ConstructUsing(person => new GetByIdResponse(
+        CreateMap<Person, GetPersonByIdResponse>()
+            .ConstructUsing(person => new GetPersonByIdResponse(
                 person.FirstName,
                 person.Surname
             ));
