@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using RDP.EDB.Management.Application.Abstractions.Queries;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.GetById;
 
-public class GetPersonByIdQueryHandler : IRequestHandler<GetPersonByIdQuery, GetPersonByIdQueryResult>
+public class GetPersonByIdQueryHandler : IQueryHandler<GetPersonByIdQuery, GetPersonByIdQueryResult>
 {
     public async Task<GetPersonByIdQueryResult> Handle(
         GetPersonByIdQuery request, 
