@@ -1,6 +1,9 @@
-﻿using MediatR;
+﻿using RDP.EDB.Management.Application.Abstractions.Queries;
+using RDP.EDB.Management.Application.Abstractions.Result;
 using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.Get;
 
-public record GetPeopleQuery() : IRequest<IEnumerable<Person>>;
+public class GetPeopleQueryResult(IEnumerable<Person> result) : BaseListResult<Person>(result);
+
+public record GetPeopleQuery() : IQueryRequest<GetPeopleQueryResult>;

@@ -1,18 +1,17 @@
 ﻿using MediatR;
-using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.Get;
 
-public class GetPeopleQueryHandler : IRequestHandler<GetPeopleQuery, IEnumerable<Person>>
+public class GetPeopleQueryHandler : IRequestHandler<GetPeopleQuery, GetPeopleQueryResult>
 {
-    public async Task<IEnumerable<Person>> Handle(
-        GetPeopleQuery request, 
-        CancellationToken cancellationToken)
+    public async Task<GetPeopleQueryResult> Handle(
+        GetPeopleQuery request,
+        CancellationToken cancellationToken
+    )
     {
-        return
-        [
-            new("Diego", "Doná"),
-            new("Sandro", "Junior", "Ribeiro")
-        ];
+        return new GetPeopleQueryResult([
+            new("john", "doe"),
+            new("ana", "dane"),
+        ]);
     }
 }
