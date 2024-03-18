@@ -2,10 +2,10 @@
 
 public abstract class BaseListResult<T>
 {
-    public IEnumerable<T> Result { get; }
+    public IEnumerable<T> Data { get; }
 
-    protected BaseListResult(IEnumerable<T> result)
+    protected BaseListResult(IEnumerable<T> data)
     {
-        Result = result;
+        Data = data;
     }
 }

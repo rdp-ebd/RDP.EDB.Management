@@ -2,6 +2,4 @@
 
 namespace RDP.EDB.Management.Application.Abstractions.Queries;
 
-public interface IQueryRequest<TResult> : IRequest<TResult>
-{
-}
+public interface IQueryRequest<TResult> : IRequest<TResult>;

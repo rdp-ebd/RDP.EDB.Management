@@ -15,10 +15,10 @@ public class GetPersonByIdHandler
         CancellationToken cancellationToken
     )
     {
-        var person = await sender.Send(new GetPersonByIdQuery(id), cancellationToken);
-        if (person is null)
+        var result = await sender.Send(new GetPersonByIdQuery(id), cancellationToken);
+        if (result?.Data is null)
             return TypedResults.NotFound();
 
-        return TypedResults.Ok(mapper.Map<GetPersonByIdResponse>(person));
+        return TypedResults.Ok(mapper.Map<GetPersonByIdResponse>(result?.Data));
     }
 }

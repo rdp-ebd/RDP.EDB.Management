@@ -1,18 +1,17 @@
 ﻿using MediatR;
-using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.GetById;
 
-public class GetPersonByIdQueryHandler : IRequestHandler<GetPersonByIdQuery, Person?>
+public class GetPersonByIdQueryHandler : IRequestHandler<GetPersonByIdQuery, GetPersonByIdQueryResult>
 {
-    public async Task<Person?> Handle(
+    public async Task<GetPersonByIdQueryResult> Handle(
         GetPersonByIdQuery request, 
         CancellationToken cancellationToken
     )
     {
-        if (request.Id == 1)
-            return new("John", "Doe");
+        if (request.Id == 11)
+            return new(new("John", "Doe"));
 
-        return null;
+        return new(null);
     }
 }

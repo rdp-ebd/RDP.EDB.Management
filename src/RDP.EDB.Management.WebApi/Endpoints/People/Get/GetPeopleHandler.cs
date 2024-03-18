@@ -14,9 +14,9 @@ public class GetPeopleHandler
         CancellationToken token
     )
     {
-        var response = await sender.Send(new GetPeopleQuery(), token);
-        var peopleResponse = mapper.Map<IEnumerable<GetPeopleResponse>>(response?.Result);
+        var result = await sender.Send(new GetPeopleQuery(), token);
+        var people = mapper.Map<IEnumerable<GetPeopleResponse>>(result?.Data);
 
-        return TypedResults.Ok(peopleResponse);
+        return TypedResults.Ok(people);
     }
 }
