@@ -9,7 +9,7 @@ public class GetPersonByIdQueryHandler : IRequestHandler<GetPersonByIdQuery, Get
         CancellationToken cancellationToken
     )
     {
-        if (request.Id == 11)
+        if (request.Id == 1)
             return new(new("John", "Doe"));
 
         return new(null);

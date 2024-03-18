@@ -11,12 +11,11 @@ public class PeopleEndpoint : ICarterModule
         var group = app.MapGroup("/api/people");
         const string tag = "people";
 
-        // 1) podemos abstrair controllers usando "handlers" com métodos static (acho preferível)
-        group.MapGet("", GetPeopleHandler.HandleAsync)
+        group.MapGet("", GetEndpoint.HandleAsync)
             .WithTags(tag)
             .WithOpenApi();
 
-        group.MapGet("{id}", GetPersonByIdHandler.HandleAsync)
+        group.MapGet("{id}", GetByIdEndpoint.HandleAsync)
             .WithTags(tag)
             .WithOpenApi();
     }        
