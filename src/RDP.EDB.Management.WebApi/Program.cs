@@ -24,5 +24,3 @@ app.MapCarter();
 app.UseHttpsRedirection();
 
 app.Run();
-
-// teste
