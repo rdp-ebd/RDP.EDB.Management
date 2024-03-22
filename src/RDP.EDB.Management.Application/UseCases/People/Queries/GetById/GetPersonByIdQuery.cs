@@ -1,6 +1,5 @@
-﻿using MediatR;
-using RDP.EDB.Management.Domain.Entities;
+﻿using RDP.EDB.Management.Application.Abstractions.Queries;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.GetById;
 
-public record GetPersonByIdQuery(int Id) : IRequest<Person?>;
+public record GetPersonByIdQuery(int Id): IQueryRequest<GetPersonByIdQueryResult>;

@@ -20,4 +20,8 @@
     <ProjectReference Include="..\RDP.EDB.Management.Infra\RDP.EDB.Management.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
+
 </Project>

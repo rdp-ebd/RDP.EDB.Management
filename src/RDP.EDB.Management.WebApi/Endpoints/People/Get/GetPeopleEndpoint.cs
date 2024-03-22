@@ -6,7 +6,7 @@ using RDP.EDB.Management.Application.UseCases.People.Queries.Get;
 
 namespace RDP.EDB.Management.WebApi.Endpoints.People.Get;
 
-public class GetPeopleHandler
+public class GetPeopleEndpoint
 {
     public static async Task<Ok<IEnumerable<GetPeopleResponse>>> HandleAsync(
         [FromServices] ISender sender,
@@ -14,9 +14,9 @@ public class GetPeopleHandler
         CancellationToken token
     )
     {
-        var people = await sender.Send(new GetPeopleQuery(), token);
-        var peopleResponse = mapper.Map<IEnumerable<GetPeopleResponse>>(people);
+        var result = await sender.Send(new GetPeopleQuery(), token);
+        var people = mapper.Map<IEnumerable<GetPeopleResponse>>(result?.Data);
 
-        return TypedResults.Ok(peopleResponse);
+        return TypedResults.Ok(people);
     }
 }
