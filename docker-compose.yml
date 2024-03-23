@@ -1,18 +1,18 @@
 version: '3.4'
 
 services:
-  rdp.edb.management.webapi:
+  rdp_ebd_man_webapi:
     image: ${DOCKER_REGISTRY-}rdpedbmanagementwebapi
-    container_name: rdp.edb.management.webapi
+    container_name: rdp_ebd_man_webapi
     networks:
         - edb-management-network
     build:
       context: .
       dockerfile: src/RDP.EDB.Management.WebApi/Dockerfile
   
-  rdp.edb.management.database:
+  rdp_ebd_man_database:
     image: postgres:alpine3.18
-    container_name: rdp.edb.management.database
+    container_name: rdp_ebd_man_database
     ports:
       - "5432:5432"
     networks:
