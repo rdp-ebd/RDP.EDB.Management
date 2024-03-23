@@ -14,10 +14,7 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddFluentValidation();
 builder.Services.AddExceptionHandlers();
 
-builder.Host.UseSerilog((context, configuration) =>
-{
-    configuration.ReadFrom.Configuration(context.Configuration);
-});
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
