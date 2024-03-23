@@ -1,5 +1,5 @@
 using Carter;
-using RDP.EDB.Management.Application;
+using RDP.EDB.Management.WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCarter();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssembly).Assembly));
+builder.Services.AddMediatr();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddFluentValidation();
+builder.Services.AddExceptionHandlers();
 
 var app = builder.Build();
 
@@ -21,6 +23,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapCarter();
+app.UseExceptionHandler();
 app.UseHttpsRedirection();
 
 app.Run();
