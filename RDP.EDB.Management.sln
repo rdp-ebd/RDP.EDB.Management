@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7C4C29B4-152
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1025331F-44F9-4212-B016-F67573438EBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.Domain", "src\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj", "{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDP.EDB.Management.Domain", "src\RDP.EDB.Management.Domain\RDP.EDB.Management.Domain.csproj", "{64010A8A-CC6E-409E-807B-7A9CC2DDE0FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.Application", "src\RDP.EDB.Management.Application\RDP.EDB.Management.Application.csproj", "{70566CDF-D500-422D-9852-BBCD62695C58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDP.EDB.Management.Application", "src\RDP.EDB.Management.Application\RDP.EDB.Management.Application.csproj", "{70566CDF-D500-422D-9852-BBCD62695C58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.WebApi", "src\RDP.EDB.Management.WebApi\RDP.EDB.Management.WebApi.csproj", "{39EB1D36-9194-4124-BB76-276A939EE4DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDP.EDB.Management.WebApi", "src\RDP.EDB.Management.WebApi\RDP.EDB.Management.WebApi.csproj", "{39EB1D36-9194-4124-BB76-276A939EE4DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDP.EDB.Management.Infra", "src\RDP.EDB.Management.Infra\RDP.EDB.Management.Infra.csproj", "{EE0D5519-EF85-472D-8F69-42A3834FE14D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDP.EDB.Management.Infra", "src\RDP.EDB.Management.Infra\RDP.EDB.Management.Infra.csproj", "{EE0D5519-EF85-472D-8F69-42A3834FE14D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FE217CDE-E9B8-48DF-8DA0-6F89B141E54A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE0D5519-EF85-472D-8F69-42A3834FE14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE217CDE-E9B8-48DF-8DA0-6F89B141E54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE217CDE-E9B8-48DF-8DA0-6F89B141E54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE217CDE-E9B8-48DF-8DA0-6F89B141E54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE217CDE-E9B8-48DF-8DA0-6F89B141E54A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
