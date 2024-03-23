@@ -3,6 +3,7 @@ version: '3.4'
 services:
   rdp.edb.management.webapi:
     image: ${DOCKER_REGISTRY-}rdpedbmanagementwebapi
+    container_name: rdp.edb.management.webapi
     build:
       context: .
       dockerfile: src/RDP.EDB.Management.WebApi/Dockerfile
