@@ -9,11 +9,7 @@ public static class ExceptionHandlersExtensions
         services.AddExceptionHandler<FluentValidationExceptionHandler>();
         services.AddExceptionHandler<GlobalExceptionHandler>();
 
-        //
-
         services.AddProblemDetails();
-
-        //
 
         return services;
     }

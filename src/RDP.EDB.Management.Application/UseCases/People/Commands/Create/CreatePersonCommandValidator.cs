@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
+using RDP.EDB.Management.Application.Abstractions.Validators;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Commands.Create;
 
-public class CreatePersonCommandValidator : AbstractValidator<CreatePersonCommand>
+public class CreatePersonCommandValidator : AbstractValidator<CreatePersonCommand>, IApplicationRequestValidator
 {
     public CreatePersonCommandValidator()
     {
