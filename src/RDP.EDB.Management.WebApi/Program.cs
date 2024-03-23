@@ -1,4 +1,5 @@
 using Carter;
+using Serilog;
 using RDP.EDB.Management.WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,11 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddFluentValidation();
 builder.Services.AddExceptionHandlers();
 
+builder.Host.UseSerilog((context, configuration) =>
+{
+    configuration.ReadFrom.Configuration(context.Configuration);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSerilogRequestLogging();
 app.MapCarter();
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
