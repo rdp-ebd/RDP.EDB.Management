@@ -4,6 +4,30 @@ services:
   rdp.edb.management.webapi:
     image: ${DOCKER_REGISTRY-}rdpedbmanagementwebapi
     container_name: rdp.edb.management.webapi
+    networks:
+        - edb-management-network
     build:
       context: .
       dockerfile: src/RDP.EDB.Management.WebApi/Dockerfile
+  
+  rdp.edb.management.database:
+    image: postgres:alpine3.18
+    container_name: rdp.edb.management.database
+    ports:
+      - "5432:5432"
+    networks:
+        - edb-management-network
+    volumes:
+        - db_volume:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_PASSWORD=asd@123
+        - POSTGRES_USER=ebd_user
+        - POSTGRES_DB=ebd
+  
+networks:
+  edb-management-network:
+
+volumes:
+  db_volume:
+    name: ebd_db_volume
+    driver: local  
