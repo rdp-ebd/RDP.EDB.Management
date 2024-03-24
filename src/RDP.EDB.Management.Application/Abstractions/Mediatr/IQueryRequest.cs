@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using RDP.EDB.Management.Application.Abstractions.Result;
 
 namespace RDP.EDB.Management.Application.Abstractions.Mediatr;
 
-public interface IQueryRequest<out TResult> : IRequest<TResult>;
+public interface IQueryRequest<TResponse> 
+    : IRequest<QueryResult<TResponse>>;

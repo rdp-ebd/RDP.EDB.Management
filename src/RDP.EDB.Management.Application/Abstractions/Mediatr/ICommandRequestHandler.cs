@@ -1,9 +1,12 @@
 ﻿using MediatR;
+using RDP.EDB.Management.Application.Abstractions.Result;
 
 namespace RDP.EDB.Management.Application.Abstractions.Mediatr;
 
-public interface ICommandRequestHandler<in TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>;
+public interface ICommandRequestHandler<TRequest>
+    : IRequestHandler<TRequest, CommandResult>
+    where TRequest : ICommandRequest;
 
-public interface ICommandHandler<in TRequest> : IRequestHandler<TRequest>
-    where TRequest : IRequest;
+public interface ICommandRequestHandler<TRequest, TResponse> 
+    : IRequestHandler<TRequest, CommandResult<TResponse>>
+    where TRequest : ICommandRequest<TResponse>;

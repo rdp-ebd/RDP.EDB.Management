@@ -1,24 +1,21 @@
-﻿
+﻿namespace RDP.EDB.Management.Application.Abstractions.Result;
 
-namespace RDP.EDB.Management.Application.Abstractions.Result;
-
-public class CommandResult<T> : BaseResult<T>
+public class CommandResult : BaseResult
 {
     private CommandResult(
-        T? data,
         bool isSuccess,
         List<string>? failureDetails = null
-    ) : base(data, isSuccess, failureDetails)
+    ) : base(isSuccess, failureDetails)
     {
     }
 
-    public static CommandResult<T> Success(T? data)
+    public static CommandResult Success()
     {
-        return new(data, true);
+        return new(true);
     }
 
-    public static CommandResult<T> Failure(List<string> failureDetails)
+    public static CommandResult Failure(List<string> failureDetails)
     {
-        return new(default, false, failureDetails);
+        return new(false, failureDetails);
     }
 }

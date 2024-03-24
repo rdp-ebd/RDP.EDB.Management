@@ -1,8 +1,8 @@
 ﻿namespace RDP.EDB.Management.Application.Abstractions.Result;
 
-public class QueryResult<T> : BaseResult<T>
+public class CommandResult<T> : BaseResult<T>
 {
-    protected QueryResult(
+    private CommandResult(
         T? data,
         bool isSuccess,
         List<string>? failureDetails = null
@@ -10,12 +10,12 @@ public class QueryResult<T> : BaseResult<T>
     {
     }
 
-    public static QueryResult<T> Success(T? data)
+    public static CommandResult<T> Success(T? data)
     {
         return new(data, true);
     }
 
-    public static QueryResult<T> Failure(List<string> failureDetails)
+    public static CommandResult<T> Failure(List<string> failureDetails)
     {
         return new(default, false, failureDetails);
     }

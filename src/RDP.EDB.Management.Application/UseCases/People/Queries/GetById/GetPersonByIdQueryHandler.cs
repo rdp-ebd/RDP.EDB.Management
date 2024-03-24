@@ -4,7 +4,7 @@ using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.GetById;
 
-public class GetPersonByIdQueryHandler : IQueryRequestHandler<GetPersonByIdQuery, QueryResult<Person>>
+public class GetPersonByIdQueryHandler : IQueryRequestHandler<GetPersonByIdQuery, Person>
 {
     public async Task<QueryResult<Person>> Handle(
         GetPersonByIdQuery request,

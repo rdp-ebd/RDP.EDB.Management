@@ -4,7 +4,7 @@ using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Commands.Create;
 
-public class CreatePersonCommandHandler : ICommandRequestHandler<CreatePersonCommand, CommandResult<Person>>
+public class CreatePersonCommandHandler : ICommandRequestHandler<CreatePersonCommand, Person>
 {
     public async Task<CommandResult<Person>> Handle(
         CreatePersonCommand request,
