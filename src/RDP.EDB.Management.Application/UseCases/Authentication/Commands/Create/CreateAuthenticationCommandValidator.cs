@@ -4,7 +4,7 @@ using RDP.EDB.Management.Application.UseCases.Authentication.Commands.Create;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Commands.Create;
 
-public class CreateAuthenticationCommandValidator 
+public class CreateAuthenticationCommandValidator
     : AbstractValidator<CreateAuthenticationCommand>, IApplicationRequestValidator
 {
     public CreateAuthenticationCommandValidator()

@@ -1,17 +1,19 @@
-﻿using RDP.EDB.Management.Application.Abstractions.Queries;
+﻿using RDP.EDB.Management.Application.Abstractions.Mediatr;
+using RDP.EDB.Management.Application.Abstractions.Result;
+using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.GetById;
 
-public class GetPersonByIdQueryHandler : IQueryHandler<GetPersonByIdQuery, GetPersonByIdQueryResult>
+public class GetPersonByIdQueryHandler : IQueryRequestHandler<GetPersonByIdQuery, QueryResult<Person>>
 {
-    public async Task<GetPersonByIdQueryResult> Handle(
-        GetPersonByIdQuery request, 
+    public async Task<QueryResult<Person>> Handle(
+        GetPersonByIdQuery request,
         CancellationToken cancellationToken
     )
     {
-        if (request.Id == 1)
-            return new(new("John", "Doe"));
+        if(request.Id == 1)
+            return QueryResult<Person>.Success(new("john", "doe"));
 
-        return new(null);
+        return QueryResult<Person>.Failure([$"Id: {request.Id} not found"]);
     }
 }

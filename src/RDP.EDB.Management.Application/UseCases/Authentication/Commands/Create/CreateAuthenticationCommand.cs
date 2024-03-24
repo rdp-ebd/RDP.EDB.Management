@@ -1,4 +1,4 @@
-﻿using RDP.EDB.Management.Application.Abstractions.Commands;
+﻿using RDP.EDB.Management.Application.Abstractions.Mediatr;
 
 namespace RDP.EDB.Management.Application.UseCases.Authentication.Commands.Create;
 

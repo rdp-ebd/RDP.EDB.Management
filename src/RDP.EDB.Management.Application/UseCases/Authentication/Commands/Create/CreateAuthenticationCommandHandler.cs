@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
-using RDP.EDB.Management.Application.Abstractions.Commands;
+using RDP.EDB.Management.Application.Abstractions.Mediatr;
 using RDP.EDB.Management.Application.Identification;
 
 namespace RDP.EDB.Management.Application.UseCases.Authentication.Commands.Create;
@@ -11,7 +11,7 @@ public class CreateAuthenticationCommandHandler : ICommandHandler<CreateAuthenti
     private readonly UserManager<EbdUser> _userManager;
 
     public CreateAuthenticationCommandHandler(
-        ILogger<CreateAuthenticationCommandHandler> logger, 
+        ILogger<CreateAuthenticationCommandHandler> logger,
         UserManager<EbdUser> userManager
     )
     {
@@ -20,17 +20,17 @@ public class CreateAuthenticationCommandHandler : ICommandHandler<CreateAuthenti
     }
 
     public async Task Handle(
-        CreateAuthenticationCommand command, 
+        CreateAuthenticationCommand command,
         CancellationToken cancellationToken)
     {
-        var newUser = new EbdUser() 
-        { 
+        var newUser = new EbdUser()
+        {
             UserName = command.Username,
             Email = command.Email,
         };
 
         var result = await _userManager.CreateAsync(newUser, command.Password);
-        if(result.Succeeded )
+        if (result.Succeeded)
         {
             return;
         }

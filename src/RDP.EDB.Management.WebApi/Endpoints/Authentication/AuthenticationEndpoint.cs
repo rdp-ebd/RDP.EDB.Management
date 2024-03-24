@@ -13,5 +13,5 @@ public class AuthenticationEndpoint : ICarterModule
         group.MapPost("", PostAuthenticationEndpoint.HandleAsync)
             .WithTags(tag)
             .WithOpenApi();
-    }        
+    }
 }
