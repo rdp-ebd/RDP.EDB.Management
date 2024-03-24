@@ -1,11 +1,6 @@
 using Carter;
-using Serilog;
 using RDP.EDB.Management.WebApi.Extensions;
-using RDP.EDB.Management.Infra.Contexts;
-using Microsoft.EntityFrameworkCore;
-using RDP.EDB.Management.Infra;
-using RDP.EDB.Management.Application.Identification;
-using Microsoft.AspNetCore.Identity;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,33 +13,16 @@ builder.Services.AddMediatr();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddFluentValidation();
 builder.Services.AddExceptionHandlers();
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), sqlConf =>
-    {
-        sqlConf.MigrationsAssembly(typeof(InfraAssembly).Assembly.GetName().Name);
-    });
-});
-
-builder.Services.AddIdentity<EbdUser, IdentityRole<string>>(options =>
-{
-    options.User.RequireUniqueEmail = true;
-    options.Password.RequiredLength = 6;
-})
-.AddEntityFrameworkStores<ApplicationDbContext>()
-.AddDefaultTokenProviders();
+builder.Services.AddEntityFrameworkDbContext(builder.Configuration);
+builder.Services.AddIdentityConfiguration();
 
 builder.Host.UseSerilog();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseSerilogRequestLogging();
 app.MapCarter();
