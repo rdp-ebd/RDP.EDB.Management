@@ -4,6 +4,8 @@ using RDP.EDB.Management.WebApi.Extensions;
 using RDP.EDB.Management.Infra.Contexts;
 using Microsoft.EntityFrameworkCore;
 using RDP.EDB.Management.Infra;
+using RDP.EDB.Management.Application.Identification;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,7 @@ builder.Services.AddMediatr();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddFluentValidation();
 builder.Services.AddExceptionHandlers();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), sqlConf =>
@@ -23,6 +26,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         sqlConf.MigrationsAssembly(typeof(InfraAssembly).Assembly.GetName().Name);
     });
 });
+
+builder.Services.AddIdentity<EbdUser, IdentityRole<string>>(options =>
+{
+    options.User.RequireUniqueEmail = true;
+    options.Password.RequiredLength = 6;
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
 
 builder.Host.UseSerilog();
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using RDP.EDB.Management.Application.Abstractions.Errors;
 using RDP.EDB.Management.Application.Exceptions.Validations;
 
 namespace RDP.EDB.Management.WebApi.Middlewares.Errors;
