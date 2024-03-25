@@ -6,8 +6,12 @@ name: Continuos Integration
 on:
   push:
     branches: [ "main" ]
+    paths-ignore: 
+    - README.md
+    
   pull_request:
     branches: [ "main" ]
+  
 
 jobs:
   build:
@@ -15,15 +19,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
+      
     - name: Setup .NET 8
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+        
     - name: Restore dependencies
       working-directory: ./src/RDP.EDB.Management.WebApi
       run: dotnet restore
+      
     - name: Bulding
       working-directory: ./src/RDP.EDB.Management.WebApi
       run: dotnet build -c Release --no-restore
+      
     # add tests...
