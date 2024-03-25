@@ -52,7 +52,7 @@ jobs:
       shell: pwsh
       run: |
         dotnet-sonarscanner begin /k:"rdp-ebd_RDP.EDB.Management" /o:"rdp-ebd" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-        dotnet restore ./src
-        dotnet build ./src/RDP.EDB.Management.WebApi/RDP.EDB.Management.WebApi.csproj -c Release --no-restore
+        dotnet restore ./src/RDP.EDB.Management.sln
+        dotnet build ./src/RDP.EDB.Management.sln -c Release --no-restore
         dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
     
