@@ -1,4 +1,4 @@
-[![Continuos Integration](https://github.com/rdp-ebd/RDP.EDB.Management/actions/workflows/main-branch-build.yml/badge.svg)](https://github.com/rdp-ebd/RDP.EDB.Management/actions/workflows/main-branch-build.yml)
+[![Continuos Integration](https://github.com/rdp-ebd/RDP.EDB.Management/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/rdp-ebd/RDP.EDB.Management/actions/workflows/continuous-integration.yml)
 
 # RDP.EDB.Management
 Microserviço de gerenciamento
