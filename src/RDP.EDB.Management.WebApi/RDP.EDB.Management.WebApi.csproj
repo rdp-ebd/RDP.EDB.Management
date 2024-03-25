@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <Folder Include="Abstractions\" />
+    <Folder Include="MapperProfiles\" />
   </ItemGroup>
 
 </Project>

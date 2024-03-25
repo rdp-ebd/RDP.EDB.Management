@@ -1,15 +1,17 @@
-﻿using RDP.EDB.Management.Application.Abstractions.Queries;
+﻿using RDP.EDB.Management.Application.Abstractions.Mediatr;
+using RDP.EDB.Management.Application.Abstractions.Result;
+using RDP.EDB.Management.Domain.Entities;
 
 namespace RDP.EDB.Management.Application.UseCases.People.Queries.Get;
 
-public class GetPeopleQueryHandler : IQueryHandler<GetPeopleQuery, GetPeopleQueryResult>
+public class GetPeopleQueryHandler : IQueryRequestHandler<GetPeopleQuery, List<Person>>
 {
-    public async Task<GetPeopleQueryResult> Handle(
+    public async Task<QueryResult<List<Person>>> Handle(
         GetPeopleQuery request,
         CancellationToken cancellationToken
     )
     {
-        return new GetPeopleQueryResult([
+        return QueryResult<List<Person>>.Success([
             new("john", "doe"),
             new("ana", "dane"),
         ]);

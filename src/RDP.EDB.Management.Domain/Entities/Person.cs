@@ -2,6 +2,7 @@
 
 public class Person
 {
+    public Guid Id { get; private set; }
     public string FirstName { get; private set; }
     public string? MiddleName { get; private set; }
     public string Surname { get; private set; }
@@ -12,6 +13,7 @@ public class Person
 
     public Person(string firstName, string surname, string? middleName = null)
     {
+        Id = Guid.NewGuid();
         FirstName = firstName;
         MiddleName = middleName;
         Surname = surname;
