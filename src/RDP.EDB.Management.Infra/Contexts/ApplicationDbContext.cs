@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RDP.EDB.Management.Application.Identification;
+using RDP.EDB.Management.Infra.Configurations.Entities;
 
 namespace RDP.EDB.Management.Infra.Contexts;
 
@@ -24,5 +25,12 @@ public class ApplicationDbContext : IdentityDbContext<EbdUser>
         builder.Entity<IdentityUserRole<string>>().ToTable("AspNetUserRoles", _IdentitySchema);
         builder.Entity<IdentityUserToken<string>>().ToTable("AspNetUserTokens", _IdentitySchema);
         builder.Entity<EbdUser>().ToTable("AspNetUsers", _IdentitySchema);
+
+        builder.ApplyConfiguration(new PersonConfiguration());
+    }
+
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        base.ConfigureConventions(configurationBuilder);
     }
 }

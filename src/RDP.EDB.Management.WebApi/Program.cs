@@ -16,6 +16,7 @@ builder.Services.AddFluentValidation();
 builder.Services.AddExceptionHandlers();
 builder.Services.AddEntityFrameworkDbContext(builder.Configuration);
 builder.Services.AddIdentityConfiguration();
+builder.Services.AddRepositories();
 
 builder.Host.UseSerilog();
 

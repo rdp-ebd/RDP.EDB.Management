@@ -9,22 +9,22 @@ services:
     build:
       context: .
       dockerfile: src/RDP.EDB.Management.WebApi/Dockerfile
-    environment:
-        - ConnectionStrings__DefaultConnection=Server=rdp_ebd_man_database;Port=5432;Database=ebd;User Id=ebd_user;Password=asd@123
+    env_file:
+      - env/.env-webapp
+    depends_on:
+      - rdp_ebd_man_database
   
   rdp_ebd_man_database:
     image: postgres:alpine3.18
     container_name: rdp_ebd_man_database
+    env_file:
+      - env/.env-postgresql
     ports:
       - "5432:5432"
     networks:
         - edb-management-network
     volumes:
         - db_volume:/var/lib/postgresql/data
-    environment:
-        - POSTGRES_PASSWORD=asd@123
-        - POSTGRES_USER=ebd_user
-        - POSTGRES_DB=ebd
   
 networks:
   edb-management-network:
