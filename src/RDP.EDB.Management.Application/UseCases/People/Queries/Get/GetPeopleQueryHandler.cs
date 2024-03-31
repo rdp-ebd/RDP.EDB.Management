@@ -19,7 +19,7 @@ public class GetPeopleQueryHandler : IQueryRequestHandler<GetPeopleQuery, List<P
         CancellationToken cancellationToken
     )
     {
-        var people = await _personRepository.GetAll();
+        var people = await _personRepository.GetAllAsync();
         return QueryResult<List<Person>>.Success(people);
     }
 }

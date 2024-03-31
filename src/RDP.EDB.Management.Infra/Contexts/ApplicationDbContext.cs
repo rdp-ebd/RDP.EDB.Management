@@ -28,9 +28,4 @@ public class ApplicationDbContext : IdentityDbContext<EbdUser>
 
         builder.ApplyConfiguration(new PersonConfiguration());
     }
-
-    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
-    {
-        base.ConfigureConventions(configurationBuilder);
-    }
 }
